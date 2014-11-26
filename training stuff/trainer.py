@@ -19,5 +19,4 @@ for line in data_file:
     freq_data.append(list(line[1]))
     classifications.append(line[2])
     
-    
 classifier = RandomForestClassifier()
