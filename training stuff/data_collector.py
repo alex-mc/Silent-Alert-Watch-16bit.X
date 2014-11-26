@@ -2,6 +2,9 @@
 """
 Created on Wed Nov 26 09:27:33 2014
 
+Reads time and frequency domain data in from a serial port and saves it to a
+text file.
+
 @author: Alex
 """
 

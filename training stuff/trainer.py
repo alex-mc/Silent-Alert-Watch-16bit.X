@@ -2,6 +2,9 @@
 """
 Created on Wed Nov 26 09:51:36 2014
 
+Trains a Random Forest Classifier from a text file containing time and
+frequency domain data.
+
 @author: Alex
 """
 

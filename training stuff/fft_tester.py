@@ -2,6 +2,10 @@
 """
 Created on Wed Nov 26 10:04:14 2014
 
+Reads time and frequency domain data from a properly formatted ;/, delimited
+file and compares the externally computed fft results with those of numpy's
+fft/ifft functions.  Results (errors) are saved to a text file.
+
 @author: Alex
 """
 
