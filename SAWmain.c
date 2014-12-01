@@ -24,8 +24,16 @@ _FOSCSEL(FNOSC_FRC); // Select fast RC clock
 void setup(void);
 
 int main(void) {
+    short imaginaryNumbers[64];
+    short realNumbers[64];
+    short i = 0;
+    setup();
     while(1) {
-        // read ADC
+        for (i = 0; i < 64; i++) {
+            ConvertADC1();
+            while(BusyADC1);
+            realNumbers[i] = ReadADC1();
+
         // run FFT
         // write to RS232
     }
