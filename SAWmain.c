@@ -22,6 +22,11 @@
 void setup(void);
 
 void main(void) {
+    while(1) {
+        // read ADC
+        // run FFT
+        // write to RS232
+    }
     while(1);
 }
 
