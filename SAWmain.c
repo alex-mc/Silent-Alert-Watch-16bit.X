@@ -7,11 +7,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "p24Hxxxx.h"
 
 /*
  * 
  */
 void main(void) {
-    
+    while(1);
 }
-

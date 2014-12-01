@@ -8,7 +8,7 @@ frequency domain data.
 @author: Alex
 """
 
-from sklearn import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 freq_data = []
 classifications = []

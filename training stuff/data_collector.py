@@ -10,7 +10,7 @@ text file.
 
 import serial
 
-PORT_NUM = 0
+PORT_NUM = 2
 BAUD = 9600
 DATA_FILENAME = 'normal1.txt' # normal, yell, horn, etc.
 CLASS = 'N' # N, Y, H, etc.
