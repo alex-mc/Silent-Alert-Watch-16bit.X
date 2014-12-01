@@ -7,12 +7,26 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "fft.h"
+#include <adc.h>
+#include <delay.h>
+#include <timer.h>
+#include <libq.h>
 #include "p24Hxxxx.h"
+
+#include "fft.h"
 
 /*
  * 
  */
+
+void setup(void);
+
 void main(void) {
     while(1);
+}
+
+void setup(void) {
+    // open ADC
+    // open SPI
+    // open motor pin(s)
 }
