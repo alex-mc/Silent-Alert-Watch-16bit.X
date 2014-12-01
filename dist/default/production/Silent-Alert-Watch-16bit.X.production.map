@@ -46,6 +46,8 @@ Command:
 
 Archive member included because of file (symbol)
 
+c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib/PIC24H\libp24HJ128GP202-elf.a(OpenADC1.o)
+                              build/default/production/SAWmain.o (_OpenADC1)
 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                               (__resetPRI)
 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
@@ -56,12 +58,12 @@ Program Memory  [Origin = 0x200, Length = 0x15600]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200                0x9e            0xed  (237)
-.const                       0x29e               0x600           0x900  (2304)
-.text                        0x89e               0x37e           0x53d  (1341)
-.dinit                       0xc1c                 0x2             0x3  (3)
+.text                        0x200                0xb8           0x114  (276)
+.const                       0x2b8               0x600           0x900  (2304)
+.text                        0x8b8               0x3ae           0x585  (1413)
+.dinit                       0xc66                 0x2             0x3  (3)
 
-                     Total program memory used (bytes):          0xf2d  (3885) 2%
+                     Total program memory used (bytes):          0xf9c  (3996) 3%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -86,23 +88,27 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00022c                  __psv_init
-                  0x00023c                  __data_init
                   0x00023c                  __data_init_standard
+                  0x00023c                  __data_init
                   0x00029a                  __DefaultInterrupt
-                  0x00029e                  _sine_wave
-                  0x00089e                  _fix_fft
-                  0x000c18                  _main
+                  0x00029e                  _OpenADC1
+                  0x0002b8                  _sine_wave
+                  0x0008b8                  _fix_fft
+                  0x000c32                  _main
+                  0x000c36                  _setup
 
 External Symbols in Program Memory (by name):
 
+                  0x00029e                  _OpenADC1
                   0x00029a                  __DefaultInterrupt
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00089e                  _fix_fft
-                  0x000c18                  _main
-                  0x00029e                  _sine_wave
+                  0x0008b8                  _fix_fft
+                  0x000c32                  _main
+                  0x000c36                  _setup
+                  0x0002b8                  _sine_wave
 
 Memory Configuration
 
@@ -161,7 +167,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200         0x9e
+.text             0x000200         0xb8
  *(.init)
  .init            0x000200         0x3c c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                   0x000200                  __resetPRI
@@ -179,6 +185,8 @@ LOAD c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libfx-elf.a
  *(.libm)
  *(.libdsp)
  *(.lib*)
+ .libperi         0x00029e         0x1a c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib/PIC24H\libp24HJ128GP202-elf.a(OpenADC1.o)
+                  0x00029e                  _OpenADC1
 
 usercode
  *(usercode)
@@ -192,8 +200,9 @@ __FSS
 __FGS
  *(__FGS.sec*)
 
-__FOSCSEL
+__FOSCSEL         0xf80006          0x2
  *(__FOSCSEL.sec*)
+ __FOSCSEL.sec    0xf80006          0x2 build/default/production/SAWmain.o
 
 __FOSC
  *(__FOSC.sec*)
@@ -222,26 +231,26 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x32c
+.debug_info       0x000000        0x3d8
  *(.debug_info)
- .debug_info      0x000000        0x113 build/default/production/SAWmain.o
- .debug_info      0x000113        0x219 build/default/production/fft.o
+ .debug_info      0x000000        0x1bf build/default/production/SAWmain.o
+ .debug_info      0x0001bf        0x219 build/default/production/fft.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000         0xd5
+.debug_abbrev     0x000000        0x10e
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x34 build/default/production/SAWmain.o
- .debug_abbrev    0x000034         0xa1 build/default/production/fft.o
+ .debug_abbrev    0x000000         0x6d build/default/production/SAWmain.o
+ .debug_abbrev    0x00006d         0xa1 build/default/production/fft.o
 
-.debug_line       0x000000        0x267
+.debug_line       0x000000        0x317
  *(.debug_line)
- .debug_line      0x000000         0x4b build/default/production/SAWmain.o
- .debug_line      0x00004b        0x21c build/default/production/fft.o
+ .debug_line      0x000000         0xfb build/default/production/SAWmain.o
+ .debug_line      0x0000fb        0x21c build/default/production/fft.o
 
-.debug_frame      0x000000         0x48
+.debug_frame      0x000000         0x58
  *(.debug_frame)
- .debug_frame     0x000000         0x24 build/default/production/SAWmain.o
- .debug_frame     0x000024         0x24 build/default/production/fft.o
+ .debug_frame     0x000000         0x34 build/default/production/SAWmain.o
+ .debug_frame     0x000034         0x24 build/default/production/fft.o
 
 .debug_str        0x000000          0xa
  *(.debug_str)
@@ -254,12 +263,12 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x47
+                  0x000000         0x5e
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x1b build/default/production/SAWmain.o
+                  0x000000         0x32 build/default/production/SAWmain.o
  .debug_pubnames
-                  0x00001b         0x2c build/default/production/fft.o
+                  0x000032         0x2c build/default/production/fft.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -1203,25 +1212,28 @@ LOAD data_init
                   0x000030         0x12 build/default/production/SAWmain.o
 
 __c30_signature
-                  0x000042         0x18
+                  0x000042         0x1e
  __c30_signature
                   0x000042          0x6 build/default/production/SAWmain.o
  __c30_signature
                   0x000048          0x6 build/default/production/fft.o
  __c30_signature
-                  0x00004e          0x6 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x00004e          0x6 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib/PIC24H\libp24HJ128GP202-elf.a(OpenADC1.o)
  __c30_signature
-                  0x000054          0x6 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x000054          0x6 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+ __c30_signature
+                  0x00005a          0x6 c:/program files (x86)/microchip/xc16/v1.23/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
 
-.const              0x829e        0x600 load address 0x00029e  
- .const             0x829e        0x600 build/default/production/fft.o
-                    0x829e                  _sine_wave
+.const              0x82b8        0x600 load address 0x0002b8  
+ .const             0x82b8        0x600 build/default/production/fft.o
+                    0x82b8                  _sine_wave
 
-.text             0x00089e        0x37e
- .text            0x00089e        0x37a build/default/production/fft.o
-                  0x00089e                  _fix_fft
- .text            0x000c18          0x4 build/default/production/SAWmain.o
-                  0x000c18                  _main
+.text             0x0008b8        0x3ae
+ .text            0x0008b8        0x37a build/default/production/fft.o
+                  0x0008b8                  _fix_fft
+ .text            0x000c32         0x34 build/default/production/SAWmain.o
+                  0x000c32                  _main
+                  0x000c36                  _setup
 
-.dinit            0x000c1c          0x2
- .dinit           0x000c1c          0x2 data_init
+.dinit            0x000c66          0x2
+ .dinit           0x000c66          0x2 data_init
