@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=SAWmain.c
+SOURCEFILES_QUOTED_IF_SPACED=SAWmain.c fft.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SAWmain.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/SAWmain.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/SAWmain.o ${OBJECTDIR}/fft.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/SAWmain.o.d ${OBJECTDIR}/fft.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/SAWmain.o
+OBJECTFILES=${OBJECTDIR}/SAWmain.o ${OBJECTDIR}/fft.o
 
 # Source Files
-SOURCEFILES=SAWmain.c
+SOURCEFILES=SAWmain.c fft.c
 
 
 CFLAGS=
@@ -89,6 +89,13 @@ ${OBJECTDIR}/SAWmain.o: SAWmain.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  SAWmain.c  -o ${OBJECTDIR}/SAWmain.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SAWmain.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/SAWmain.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/fft.o: fft.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/fft.o.d 
+	@${RM} ${OBJECTDIR}/fft.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  fft.c  -o ${OBJECTDIR}/fft.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/fft.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/fft.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/SAWmain.o: SAWmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
@@ -96,6 +103,13 @@ ${OBJECTDIR}/SAWmain.o: SAWmain.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/SAWmain.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  SAWmain.c  -o ${OBJECTDIR}/SAWmain.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SAWmain.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/SAWmain.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/fft.o: fft.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR} 
+	@${RM} ${OBJECTDIR}/fft.o.d 
+	@${RM} ${OBJECTDIR}/fft.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  fft.c  -o ${OBJECTDIR}/fft.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/fft.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/fft.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

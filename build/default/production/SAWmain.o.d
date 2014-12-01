@@ -1,2 +1,3 @@
 build/default/production/SAWmain.o:  \
-SAWmain.c 
+SAWmain.c  \
+fft.h 

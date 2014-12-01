@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "fft.h"
 #include "p24Hxxxx.h"
 
 /*
